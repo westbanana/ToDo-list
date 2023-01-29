@@ -1,4 +1,5 @@
 .main{
+  width: 100%;
 }
 form{
   display: flex;
@@ -11,12 +12,23 @@ input{
   background: rgba(128, 128, 128, 0.21);
   padding: 5px 10px;
   border-radius: 15px;
+  min-width: 50%;
+  max-width: 50%;
 }
 button{
   text-align: center;
   outline: none;
   border: none;
+  height: 30px;
+  width: 30px;
+  text-transform: uppercase;
   border-radius: 15px;
-  width: 30%;
+  min-width: 100px;
+  max-width: 100px;
   background: rgba(128, 128, 128, 0.21);
+  transition: 0.3s;
+  &:hover {
+    background: rgba(0, 0, 0, 0.21);
+    box-shadow: rgba(255, 255, 255, 0.06) inset 0 0 5px 1px;
+  }
 }

@@ -1,0 +1,18 @@
+.main{
+  height: 100vh;
+  width: 100%;
+  background: black;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  .blick{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    zIndex: 1;
+    position: absolute;
+    filter: blur(50px);
+    transition: 10s;
+  }
+}

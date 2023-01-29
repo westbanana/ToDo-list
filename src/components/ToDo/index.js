@@ -8,14 +8,22 @@ import CheckBox from '../CheckBox';
 const ToDo = ({ e, toDoList, setToDoList }) => {
   const [isActive, setIsActive] = useState(false);
   const deleteToDo = () => {
-    setToDoList(toDoList.filter(todo => todo.id !== e.id));
+    const arr = toDoList.filter(todo => todo.id !== e.id);
+    setToDoList(arr);
   };
   return (
     <div
-      className={`${style.toDo} ${isActive ? style.done : ''}`}
+      role="presentation"
+      className={`${style.toDo} ${e.isActive ? style.done : ''}`}
     >
-      <CheckBox setIsActive={setIsActive} isActive={isActive} />
-      <div className={`${isActive ? style.toDoDone : style.toDoTittle}`}>
+      <CheckBox
+        e={e}
+        setTodoList={setToDoList}
+        toDoList={toDoList}
+        setIsActive={setIsActive}
+        isActive={isActive}
+      />
+      <div className={`${e.isActive ? style.toDoDone : style.toDoTittle}`}>
         <span>{e.name}</span>
       </div>
       <div className={style.toDoTime}>

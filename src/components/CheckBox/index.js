@@ -1,18 +1,36 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import style from './style.module.scss';
 
 import { ReactComponent as Check } from '../../assets/check.svg';
 
-const CheckBox = ({ isActive, setIsActive }) => {
-  const refCheckBox = useRef(null);
+const CheckBox = ({
+  isActive, setIsActive, toDoList, e, setTodoList,
+}) => {
+  const newToDoList = () => {
+    const arr = [];
+    toDoList.forEach((element) => {
+      if (element.id === e.id) {
+        element.isActive = !isActive;
+        arr.push(element);
+      } else {
+        arr.push(element);
+      }
+    });
+    return arr;
+  };
+  const checkTodo = () => {
+    setIsActive(!isActive);
+    setTodoList(newToDoList());
+    localStorage.setItem('ToDos', JSON.stringify(toDoList));
+  };
   return (
     <div
       role="presentation"
-      onClick={() => setIsActive(!isActive)}
+      onClick={checkTodo}
       className={style.box}
     >
-      {isActive && (<Check ref={refCheckBox} className={style.check} />)}
+      {e.isActive && (<Check className={style.check} />)}
     </div>
   );
 };

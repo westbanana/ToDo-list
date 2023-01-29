@@ -1,5 +1,70 @@
+header{
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+  span{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 800;
+  }
+}
+
+body {
+}
+
+button{
+  cursor: pointer;
+  outline: none;
+}
+
+input{
+  outline: none;
+}
+
+.authorized{
+  opacity: 0;
+  transition: 0.3s;
+  animation: show 0.3s linear forwards;
+}
+@keyframes show {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+.unauthorized{
+  background: red;
+  display: flex;
+  justify-content: center;
+  div{
+    margin: 50px;
+  }
+}
+
 .main{
   height: 100vh;
   width: 100%;
-  background: #ececec;
+  overflow: auto;
+  padding: 50px 0;
+}
+.todoBlock{
+  height: 100%;
+  width: 100%;
+}
+
+.toDoList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.createToDoBLock{
+  display: flex;
+  justify-content: center;
+  form{
+    margin: 50px;
+  }
 }

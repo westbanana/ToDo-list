@@ -1,54 +1,41 @@
 import React, { useState } from 'react';
 
 import style from './style.module.scss';
+import CreateToDo from './components/CreateToDo';
+import ToDo from './components/ToDo';
 
 const App = () => {
-  const [userData, setUserData] = useState({
-    name: localStorage.getItem('userName') ? localStorage.getItem('userName') : '',
-    todosCount: localStorage.getItem('todosCount') ? localStorage.getItem('todosCount') : 0,
-  });
-  const [inputUserName, setInputUserName] = useState('');
-  const createUser = () => {
-    if (inputUserName) {
-      let userNameFirstLetterUpperCase = inputUserName;
-      inputUserName.split('').forEach((e, i) => {
-        if (i === 0 || inputUserName[i - 1] === ' ') {
-          userNameFirstLetterUpperCase = userNameFirstLetterUpperCase.substring(0, i) + e.toUpperCase()
-          + userNameFirstLetterUpperCase.substring(i + 1);
-        }
-      });
-      setUserData({
-        name: userNameFirstLetterUpperCase,
-        todosCount: userData.todosCount,
-      });
-      localStorage.setItem('userName', userData.name);
-    }
-  };
+  const [toDoList, setToDoList] = useState(localStorage.getItem('ToDos') ? JSON.parse(localStorage.getItem('ToDos')) : []);
+  const [inputToDoName, setInputToDoName] = useState('');
+  // DAy JS /DATE FNS
   return (
-    <div className={style.main}>
+    <div
+      className={style.main}
+    >
       <header>
-        <h1>{`${userData.name} ToDo list`}</h1>
+        <span>ToDo list</span>
       </header>
-      <body>
-        {userData.name !== ' ' && (
-        <div className={style.authorize}>
-          <form action="#">
-            <input
-              type="text"
-              placeholder="Set username"
-              value={inputUserName}
-              required
-              onChange={e => setInputUserName(e.target.value)}
+      <body
+        className={style.authorized}
+      >
+        <div className={style.todoBlock}>
+          <div className={style.createToDoBLock}>
+            <CreateToDo
+              inputToDoName={inputToDoName}
+              setInputToDoName={setInputToDoName}
+              toDoList={toDoList}
             />
-            <button
-              onClick={createUser}
-              type="submit"
-            >
-              Submit
-            </button>
-          </form>
+          </div>
+          <div className={style.toDoList}>
+            {toDoList.map(e => (
+              <ToDo
+                e={e}
+                toDoList={toDoList}
+                setToDoList={setToDoList}
+              />
+            ))}
+          </div>
         </div>
-        )}
       </body>
     </div>
   );

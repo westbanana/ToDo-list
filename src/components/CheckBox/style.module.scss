@@ -1,0 +1,35 @@
+.box{
+  height: 20px;
+  width: 20px;
+  background: rgba(147, 144, 144, 0.51);
+  border-radius: 100%;
+  position: absolute;
+  left: -40px;
+  top: calc(50% - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background: rgba(87, 84, 84, 0.51);
+  };
+  .check{
+    opacity: 0;
+    animation: born 0.3s linear forwards;
+    path{
+      fill: black;
+    }
+  }
+}
+
+@keyframes born {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}

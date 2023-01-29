@@ -1,0 +1,22 @@
+.main{
+}
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+input{
+  border: none;
+  background: rgba(128, 128, 128, 0.21);
+  padding: 5px 10px;
+  border-radius: 15px;
+}
+button{
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  width: 30%;
+  background: rgba(128, 128, 128, 0.21);
+}

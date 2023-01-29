@@ -1,0 +1,70 @@
+textarea {
+  resize: none;
+  background: transparent;
+  ::placeholder {
+    color: black;
+  }
+}
+.done{
+  background: #c0fdc0 !important;
+  transition: 0.3s;
+}
+.toDo{
+  position: relative;
+  background: rgba(162, 162, 162, 0.5);
+  min-width: 50%;
+  max-width: 50%;
+  min-height: 50px;
+  padding: 15px;
+  margin: 0 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  transition: 0.3s;
+  .toDoTittle{
+    text-align: left;
+    span{
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+    }
+  }
+  .toDoDone{
+    text-align: left;
+    span{
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+      text-decoration: line-through;
+    }
+  }
+  .toDoTime{
+    text-align: end;
+  }
+  .xMark,
+  input{
+    position: absolute;
+    transition: 0.3s;
+  }
+  .xMark{
+    cursor: pointer;
+    right: -30px;
+    top: 5px;
+    &:hover{
+      path{
+        transition: 0.3s;
+        fill: rgba(225, 0, 0, 0.5);
+      }
+    }
+    path{
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+  input{
+    left: -30px;
+    top: calc(50% - 7px);
+  }
+}

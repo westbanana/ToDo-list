@@ -36,6 +36,7 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
         >
           Create
         </button>
+        <span>{`TODOs: ${toDoList.length}`}</span>
       </form>
     </div>
   );

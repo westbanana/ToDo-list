@@ -2,7 +2,10 @@ header{
   width: 100%;
   text-align: center;
   transition: 0.3s;
+  position: relative;
+  z-index: 10;
   span{
+    color: #eaeaea;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 800;
@@ -36,21 +39,27 @@ input{
     opacity: 1;
   }
 }
-.unauthorized{
-  background: red;
-  display: flex;
-  justify-content: center;
-  div{
-    margin: 50px;
-  }
-}
+
 
 .main{
   height: 100vh;
   width: 100%;
   overflow: auto;
   padding: 50px 0;
+  scroll-behavior: smooth;
 }
+
+.arrow{
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  z-index: 20;
+  cursor: pointer;
+  path{
+    fill: rgba(155, 155, 155, 0.51);;
+  }
+}
+
 .todoBlock{
   height: 100%;
   width: 100%;
@@ -68,5 +77,20 @@ input{
   justify-content: center;
   form{
     margin: 50px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .arrow{
+    position: absolute;
+    bottom: 50px;
+    height: 30px;
+    width: 30px;
+    right: 10px;
+    z-index: 20;
+    cursor: pointer;
+    path{
+      fill: rgba(155, 155, 155, 0.51);;
+    }
   }
 }

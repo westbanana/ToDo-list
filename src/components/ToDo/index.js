@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import style from './style.module.scss';
 
@@ -7,14 +7,19 @@ import CheckBox from '../CheckBox';
 
 const ToDo = ({ e, toDoList, setToDoList }) => {
   const [isActive, setIsActive] = useState(false);
+  const refToDo = useRef(null);
   const deleteToDo = () => {
     const arr = toDoList.filter(todo => todo.id !== e.id);
-    setToDoList(arr);
+    refToDo.current.classList.add(`${style.removeTodo}`);
+    setTimeout(() => {
+      setToDoList(arr);
+    }, 300);
   };
   return (
     <div
+      ref={refToDo}
       role="presentation"
-      className={`${style.toDo} ${e.isActive ? style.done : ''}`}
+      className={e.isActive ? style.done : style.toDo}
     >
       <CheckBox
         e={e}

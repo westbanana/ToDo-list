@@ -5,13 +5,18 @@ textarea {
     color: black;
   }
 }
-.done{
-  background: #c0fdc0 !important;
-  transition: 0.3s;
-}
+.done,
 .toDo{
+  animation: born 0.3s linear forwards;
+}
+
+.removeTodo{
+  animation: delete 0.3s linear forwards;
+}
+
+.done{
+  color: white;
   position: relative;
-  background: rgba(162, 162, 162, 0.5);
   min-width: 50%;
   max-width: 50%;
   min-height: 50px;
@@ -23,6 +28,11 @@ textarea {
   justify-content: space-between;
   gap: 15px;
   transition: 0.3s;
+  background: rgba(162, 252, 146, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(187, 250, 197, 0.4);
   .toDoTittle{
     text-align: left;
     span{
@@ -42,6 +52,74 @@ textarea {
   }
   .toDoTime{
     text-align: end;
+    font-weight: 100;
+  }
+  .xMark,
+  input{
+    position: absolute;
+    transition: 0.3s;
+  }
+  .xMark{
+    animation: showBlock 0.3s linear forwards;
+    cursor: pointer;
+    right: -30px;
+    top: 5px;
+    &:hover{
+      path{
+        transition: 0.3s;
+        fill: rgba(225, 0, 0, 0.5);
+      }
+    }
+    path{
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+  input{
+    left: -30px;
+    top: calc(50% - 7px);
+  }
+}
+
+.toDo{
+  color: white;
+  position: relative;
+  min-width: 50%;
+  max-width: 50%;
+  min-height: 50px;
+  padding: 15px;
+  margin: 0 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  .toDoTittle{
+    text-align: left;
+    span{
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+    }
+  }
+  .toDoDone{
+    text-align: left;
+    span{
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+      text-decoration: line-through;
+    }
+  }
+  .toDoTime{
+    text-align: end;
+    font-weight: 100;
   }
   .xMark,
   input{
@@ -66,5 +144,176 @@ textarea {
   input{
     left: -30px;
     top: calc(50% - 7px);
+  }
+}
+
+@keyframes born {
+  from{
+    transform: translateX(-100%);
+    scale: 0.5;
+  }
+  to{
+    transform: translateX(0);
+    scale: 1;
+  }
+}
+
+@keyframes delete {
+  from{
+    scale: 1;
+  }
+  to{
+    scale: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  textarea {
+    resize: none;
+    background: transparent;
+    ::placeholder {
+      color: black;
+    }
+  }
+  .done,
+  .toDo{
+    animation: born 0.3s linear forwards;
+  }
+
+  .removeTodo{
+    animation: delete 0.3s linear forwards;
+  }
+
+  .done{
+    color: white;
+    position: relative;
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 50px;
+    padding: 15px;
+    margin: 0 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    transition: 0.3s;
+    background: rgba(162, 252, 146, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(187, 250, 197, 0.4);
+    .toDoTittle{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+      }
+    }
+    .toDoDone{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+        text-decoration: line-through;
+      }
+    }
+    .toDoTime{
+      text-align: end;
+      font-weight: 100;
+    }
+    .xMark,
+    input{
+      position: absolute;
+      transition: 0.3s;
+    }
+    .xMark{
+      animation: showBlock 0.3s linear forwards;
+      cursor: pointer;
+      right: -30px;
+      top: 5px;
+      &:hover{
+        path{
+          transition: 0.3s;
+          fill: rgba(225, 0, 0, 0.5);
+        }
+      }
+      path{
+        transition: 0.3s;
+        fill: rgba(100, 100, 100, 0.5);
+      }
+    }
+    input{
+      left: -30px;
+      top: calc(50% - 7px);
+    }
+  }
+
+  .toDo{
+    color: white;
+    position: relative;
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 50px;
+    padding: 15px;
+    margin: 0 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    .toDoTittle{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+      }
+    }
+    .toDoDone{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+        text-decoration: line-through;
+      }
+    }
+    .toDoTime{
+      text-align: end;
+      font-weight: 100;
+    }
+    .xMark,
+    input{
+      position: absolute;
+      transition: 0.3s;
+    }
+    .xMark{
+      cursor: pointer;
+      right: -30px;
+      top: 5px;
+      &:hover{
+        path{
+          transition: 0.3s;
+          fill: rgba(225, 0, 0, 0.5);
+        }
+      }
+      path{
+        transition: 0.3s;
+        fill: rgba(100, 100, 100, 0.5);
+      }
+    }
+    input{
+      left: -30px;
+      top: calc(50% - 7px);
+    }
   }
 }

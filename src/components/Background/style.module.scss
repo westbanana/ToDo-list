@@ -14,5 +14,18 @@
     position: absolute;
     filter: blur(50px);
     transition: 10s;
+    animation: moving 15s linear infinite;
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(100px);
+  }
+  100%{
+    transform: translateX(0px);
   }
 }

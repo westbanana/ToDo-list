@@ -13,15 +13,31 @@
   user-select: none;
   cursor: pointer;
   transition: 0.3s;
+  animation: showBlock 0.3s linear forwards;
   &:hover {
     background: rgba(87, 84, 84, 0.51);
   };
   .check{
     opacity: 0;
-    animation: born 0.3s linear forwards;
+    animation: born 2s linear forwards;
     path{
-      fill: black;
+      fill: white;
     }
+  }
+}
+
+@keyframes showBlock {
+  0%{
+    opacity: 0;
+    scale: 0;
+  }
+  90%{
+    opacity: 0;
+    scale: 0;
+  }
+  100%{
+    opacity: 1;
+    scale: 1;
   }
 }
 

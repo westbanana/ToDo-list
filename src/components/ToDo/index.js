@@ -31,7 +31,7 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
       <div className={`${e.isActive ? style.toDoDone : style.toDoTittle}`}>
         <span>{e.name}</span>
       </div>
-      <div className={style.toDoTime}>
+      <div className={`${style.toDoTime} ${e.time ? style.throughTime : ''}`}>
         <span>{e.time}</span>
       </div>
       <Xmark

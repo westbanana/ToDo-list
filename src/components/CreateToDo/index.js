@@ -2,14 +2,18 @@ import React from 'react';
 
 import style from './style.module.scss';
 
-import Data from '../GetData';
-
 const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
+  const data = new Date();
+  const monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
+  ];
   const createToDo = () => {
     if (inputToDoName) {
       const todo = {
         name: inputToDoName,
-        time: Data,
+        time: `${data.getDate()}/${monthShortNames[data.getMonth()]}/${data.getFullYear()}/${data.getHours()}:${data.getMinutes() >= 10
+          ? data.getMinutes()
+          : `0${data.getMinutes()}`}`,
         id: (new Date().getTime()),
         description: '',
         isActive: false,

@@ -7,8 +7,10 @@ const Background = () => {
 
   return (
     <div className={style.main}>
-      {blick.map(() => (
+      {blick.map((e, index) => (
         <div
+          /* eslint-disable-next-line react/no-array-index-key */
+          key={index + e}
           className={style.blick}
           style={{
             left: Math.floor(Math.random() * window.innerWidth) + 1,

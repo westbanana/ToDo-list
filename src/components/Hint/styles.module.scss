@@ -1,0 +1,47 @@
+.mainBlock {
+  position: absolute;
+  color: white;
+  padding: 20px 40px;
+  font-size: 12px;
+  background: rgba(134, 134, 134, 0.44);
+  border-radius: 12px;
+  transition: 0.4s;
+  min-height: 40px;
+  max-height: 200px;
+  overflow: hidden;
+  min-width: 40px;
+  max-width: 400px;
+  z-index: 9999;
+  left: -100px;
+  top: 90%;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: show-hint 0.4s linear forwards;
+  .XMark {
+    position: absolute;
+    top: 10px;
+    left: calc(100% - 30px);
+    cursor: pointer;
+    &:hover{
+      path{
+        transition: 0.3s;
+        fill: rgba(225, 0, 0, 0.5);
+      }
+    }
+    path{
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+}
+
+@keyframes show-hint {
+  from {
+    left: -100px;
+    top: 40%;
+  }
+  to {
+    left: 10px;
+    top: 35%;
+  }
+}

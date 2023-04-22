@@ -4,6 +4,7 @@ import style from './style.module.scss';
 import CreateToDo from './components/CreateToDo';
 import ToDo from './components/ToDo';
 import Background from './components/Background';
+import Settings from './components/Settings';
 import { ReactComponent as Arrow } from './assets/arrow.svg';
 
 const App = () => {
@@ -30,6 +31,9 @@ const App = () => {
       <header ref={refHeader}>
         <span>ToDo list</span>
       </header>
+      <Settings
+        onClick={() => console.log('click')}
+      />
       <body
         className={style.authorized}
       >

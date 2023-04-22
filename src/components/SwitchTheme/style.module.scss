@@ -1,0 +1,23 @@
+.mainBlock {
+  height: 20px;
+  width: 40px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: white;
+  z-index: 99999;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  .circle {
+    position: relative;
+    transition: 0.3s;
+    background: rgba(100, 100, 100, 0.5);
+    width: 15px;
+    border-radius: 100%;
+    height: 15px;
+    margin: 0 3px;
+  }
+}

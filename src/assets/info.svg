@@ -1,0 +1,6 @@
+<svg width="20" height="20" viewBox="0 0 679 1038" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M207 359H397C441.183 359 477 394.817 477 439V1038H207V359Z" fill="rgba(100, 100, 100, 1)"/>
+    <rect x="679" y="872" width="166" height="679" rx="83" transform="rotate(90 679 872)" fill="rgba(100, 100, 100, 1)"/>
+    <rect x="477" y="359" width="166" height="375" rx="83" transform="rotate(90 477 359)" fill="rgba(100, 100, 100, 1)"/>
+    <circle cx="339.5" cy="132.5" r="132.5" fill="rgba(100, 100, 100, 1)"/>
+</svg>

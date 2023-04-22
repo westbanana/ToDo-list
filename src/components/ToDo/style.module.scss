@@ -5,16 +5,18 @@ textarea {
     color: black;
   }
 }
+
 .done,
-.toDo{
+.toDo
+{
   animation: born 0.3s linear forwards;
 }
 
-.removeTodo{
+.removeTodo {
   animation: delete 0.3s linear forwards;
 }
 
-.done{
+.done {
   color: white;
   position: relative;
   min-width: 50%;
@@ -33,15 +35,23 @@ textarea {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(187, 250, 197, 0.4);
-  .toDoTittle{
+
+  &:hover {
+    .info {
+      opacity: 1;
+    }
+  }
+
+  .toDoTittle {
     text-align: left;
-    span{
+    span {
       font-size: 20px;
       font-weight: 400;
       word-break: break-all;
     }
   }
-  .toDoDone{
+
+  .toDoDone {
     text-align: left;
     span{
       font-size: 20px;
@@ -50,41 +60,63 @@ textarea {
       text-decoration: line-through;
     }
   }
-  .toDoTime{
+
+  .toDoTime {
     text-align: end;
     font-weight: 100;
   }
-  .throughTime{
+
+  .throughTime {
     text-decoration: line-through;
   }
+
   .xMark,
-  input{
+  .info,
+  input {
     position: absolute;
     transition: 0.3s;
   }
-  .xMark{
+
+  .info {
+    right: 10px;
+    top: 10px;
+    height: 10px;
+    width: 10px;
+    cursor: help;
+    opacity: 0;
+    &:hover {
+      path,
+      rect,
+      circle {
+        transition: 0.3s;
+        fill: rgb(213, 213, 213);
+      }
+    }
+  }
+
+  .xMark {
     animation: showBlock 0.3s linear forwards;
     cursor: pointer;
     right: -30px;
     top: 5px;
-    &:hover{
-      path{
+    &:hover {
+      path {
         transition: 0.3s;
         fill: rgba(225, 0, 0, 0.5);
       }
     }
-    path{
+    path {
       transition: 0.3s;
       fill: rgba(100, 100, 100, 0.5);
     }
   }
-  input{
+  input {
     left: -30px;
     top: calc(50% - 7px);
   }
 }
 
-.toDo{
+.toDo {
   color: white;
   position: relative;
   min-width: 50%;
@@ -103,48 +135,74 @@ textarea {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.4);
-  .toDoTittle{
+  &:hover {
+    .info {
+      opacity: 1;
+    }
+  }
+  .toDoTittle {
     text-align: left;
-    span{
+    span {
       font-size: 20px;
       font-weight: 400;
       word-break: break-all;
     }
   }
-  .toDoDone{
+  .toDoDone {
     text-align: left;
-    span{
+    span {
       font-size: 20px;
       font-weight: 400;
       word-break: break-all;
       text-decoration: line-through;
     }
   }
-  .toDoTime{
+
+  .toDoTime {
     text-align: end;
     font-weight: 100;
   }
   .xMark,
-  input{
+  .info,
+  input {
     position: absolute;
     transition: 0.3s;
   }
-  .xMark{
+
+  .info {
+    right: 10px;
+    top: 10px;
+    height: 10px;
+    width: 10px;
+    cursor: help;
+    opacity: 0;
+    &:hover {
+      path,
+      rect,
+      circle {
+        transition: 0.3s;
+        fill: rgb(213, 213, 213);
+      }
+    }
+  }
+
+  .xMark {
     cursor: pointer;
     right: -30px;
     top: 5px;
-    &:hover{
-      path{
+    &:hover {
+      path {
         transition: 0.3s;
         fill: rgba(225, 0, 0, 0.5);
       }
     }
-    path{
+    path {
       transition: 0.3s;
       fill: rgba(100, 100, 100, 0.5);
     }
   }
-  input{
+
+  input {
     left: -30px;
     top: calc(50% - 7px);
   }
@@ -232,7 +290,7 @@ textarea {
       position: absolute;
       transition: 0.3s;
     }
-    .xMark{
+    .xMark {
       animation: showBlock 0.3s linear forwards;
       cursor: pointer;
       right: -30px;

@@ -1,44 +1,44 @@
 .main{
   width: 100%;
-}
-form{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  span{
-    color: rgba(211, 211, 211, 0.53);
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    span{
+      color: rgba(211, 211, 211, 0.53);
+    }
   }
-}
-input{
-  color: white;
-  font-weight: 400;
-  border: none;
-  background: rgba(128, 128, 128, 0.21);
-  padding: 5px 10px;
-  border-radius: 15px;
-  min-width: 50%;
-  max-width: 50%;
-  &::placeholder {
-    text-align: center;
+  input{
+    color: white;
+    font-weight: 400;
+    border: none;
+    background: rgba(128, 128, 128, 0.21);
+    padding: 5px 10px;
+    border-radius: 15px;
+    min-width: 50%;
+    max-width: 50%;
+    &::placeholder {
+      text-align: center;
+    }
   }
-}
 
-button{
-  color: white;
-  text-align: center;
-  outline: none;
-  border: none;
-  height: 30px;
-  width: 30px;
-  text-transform: uppercase;
-  border-radius: 15px;
-  min-width: 100px;
-  max-width: 100px;
-  background: rgba(128, 128, 128, 0.21);
-  transition: 0.3s;
-  &:hover {
-    background: rgba(222, 222, 222, 0.21);
+  button{
+    color: white;
+    text-align: center;
+    outline: none;
+    border: none;
+    height: 30px;
+    width: 30px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    min-width: 100px;
+    max-width: 100px;
+    background: rgba(128, 128, 128, 0.21);
+    transition: 0.3s;
+    &:hover {
+      background: rgba(222, 222, 222, 0.21);
+    }
   }
 }
 

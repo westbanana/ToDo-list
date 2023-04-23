@@ -35,7 +35,8 @@ textarea {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(187, 250, 197, 0.4);
-
+  input {
+  }
   .toDoTittle {
     text-align: left;
     span {
@@ -64,19 +65,35 @@ textarea {
     text-decoration: line-through;
   }
 
+  .todoSettingsBlock {
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 19px;
+    height: 90%;
+  }
+
   .xMark,
+  .edit,
   .info,
   input {
-    position: absolute;
     transition: 0.3s;
   }
 
   .info {
-    right: -15px;
-    bottom: 10px;
     height: 15px;
     width: 15px;
     cursor: help;
+    order: 3;
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
     &:hover {
       path,
       rect,
@@ -86,12 +103,24 @@ textarea {
       }
     }
   }
-
-  .xMark {
-    animation: showBlock 0.3s linear forwards;
+  .edit {
     cursor: pointer;
-    right: -30px;
-    top: 5px;
+    height: 15px;
+    width: 15px;
+    order: 2;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(8, 215, 32, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+  .xMark {
+    cursor: pointer;
     &:hover {
       path {
         transition: 0.3s;
@@ -102,10 +131,6 @@ textarea {
       transition: 0.3s;
       fill: rgba(100, 100, 100, 0.5);
     }
-  }
-  input {
-    left: -30px;
-    top: calc(50% - 7px);
   }
 }
 
@@ -128,6 +153,27 @@ textarea {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.4);
+  textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: rgba(211, 211, 211, 0.53);
+  }
+
+  .todoSettingsBlock {
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 19px;
+    height: 90%;
+  }
+
   .toDoTittle {
     text-align: left;
     span {
@@ -151,18 +197,21 @@ textarea {
     font-weight: 100;
   }
   .xMark,
+  .edit,
   .info,
   input {
-    position: absolute;
     transition: 0.3s;
   }
 
   .info {
-    right: -15px;
-    bottom: 10px;
     height: 15px;
     width: 15px;
     cursor: help;
+    order: 3;
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
     &:hover {
       path,
       rect,
@@ -172,11 +221,24 @@ textarea {
       }
     }
   }
-
+  .edit {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    order: 2;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(8, 215, 32, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
   .xMark {
     cursor: pointer;
-    right: -30px;
-    top: 5px;
     &:hover {
       path {
         transition: 0.3s;
@@ -187,11 +249,6 @@ textarea {
       transition: 0.3s;
       fill: rgba(100, 100, 100, 0.5);
     }
-  }
-
-  input {
-    left: -30px;
-    top: calc(50% - 7px);
   }
 }
 
@@ -273,6 +330,7 @@ textarea {
       font-weight: 100;
     }
     .xMark,
+    .edit,
     input{
       position: absolute;
       transition: 0.3s;
@@ -292,10 +350,6 @@ textarea {
         transition: 0.3s;
         fill: rgba(100, 100, 100, 0.5);
       }
-    }
-    input{
-      left: -30px;
-      top: calc(50% - 7px);
     }
   }
 
@@ -340,6 +394,7 @@ textarea {
       font-weight: 100;
     }
     .xMark,
+    .edit,
     input{
       position: absolute;
       transition: 0.3s;
@@ -358,10 +413,6 @@ textarea {
         transition: 0.3s;
         fill: rgba(100, 100, 100, 0.5);
       }
-    }
-    input{
-      left: -30px;
-      top: calc(50% - 7px);
     }
   }
 }

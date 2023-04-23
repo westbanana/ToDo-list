@@ -1,27 +1,30 @@
 import React, { useRef, useState } from 'react';
-// import React, { useState } from 'react';
+import { useClickAway } from 'react-use';
 
 import styles from './style.module.scss';
 
 import SwitchTheme from '../SwitchTheme';
 import { ReactComponent as Gear } from '../../assets/settings.svg';
+import { ReactComponent as XMark } from '../../assets/xmark.svg';
 
 const Settings = () => {
   const [isOpened, setIsOpened] = useState(false);
-  const refSettings = useRef(null);
+  const settingsBlockRef = useRef();
   const openSettings = () => {
     setIsOpened(true);
-    refSettings.current.classList.add(styles.closedSetting);
   };
   const closeSettings = () => {
-    refSettings.current.classList.remove(styles.closopenedSettingsedSetting);
-    refSettings.current.classList.add(styles.closedSetting);
-    // setTimeout(() => {
-    // setIsOpened(false);
-    // }, 1000);
+    setIsOpened(false);
   };
+  useClickAway(settingsBlockRef, () => {
+    setIsOpened(false);
+  });
+
   return (
-    <div className={styles.mainBlock}>
+    <div
+      ref={settingsBlockRef}
+      className={styles.mainBlock}
+    >
       {!isOpened
         ? (
           <Gear
@@ -30,16 +33,26 @@ const Settings = () => {
           />
         )
         : (
-          <div
-            ref={refSettings}
-          >
-            <h1
-              role="presentation"
-              onClick={closeSettings}
+          <div className={styles.backgroundSettings}>
+            <div
+              className={styles.openedSettings}
             >
-              Settings
-            </h1>
-            <SwitchTheme />
+              <div className={styles.xmarkBlock}>
+                <XMark
+                  onClick={closeSettings}
+                  className={styles.xmark}
+                />
+              </div>
+              <h1
+                role="presentation"
+              >
+                Settings
+              </h1>
+              <div>
+                <span>Swipe Theme:</span>
+                <SwitchTheme />
+              </div>
+            </div>
           </div>
         )}
     </div>

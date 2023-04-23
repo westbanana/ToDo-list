@@ -2,21 +2,16 @@ import React from 'react';
 
 import style from './style.module.scss';
 
+import getData from '../Helpers/GetData';
+
 // import Hint from '../Hint';
 
 const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
-  const data = new Date();
-  const monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-  ];
-  // const [hintIsShowed, setHintIsShowed] = useState(false);
   const createToDo = () => {
     if (inputToDoName.length) {
       const todo = {
         name: inputToDoName,
-        time: `${data.getDate()}/${monthShortNames[data.getMonth()]}/${data.getFullYear()}/${data.getHours()}:${data.getMinutes() >= 10
-          ? data.getMinutes()
-          : `0${data.getMinutes()}`}`,
+        time: getData(),
         id: (new Date().getTime()),
         isActive: false,
       };

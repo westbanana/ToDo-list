@@ -3,25 +3,27 @@ import React from 'react';
 import style from './style.module.scss';
 
 import { ReactComponent as Check } from '../../assets/check.svg';
+import getData from '../Helpers/GetData';
 
 const CheckBox = ({
   isActive, setIsActive, toDoList, e, setTodoList,
 }) => {
-  const newToDoList = () => {
-    const arr = [];
-    toDoList.forEach((element) => {
-      if (element.id === e.id) {
-        element.isActive = !isActive;
-        arr.push(element);
-      } else {
-        arr.push(element);
+  const updateData = () => (
+    toDoList.map((todo) => {
+      if (e.id === todo.id) {
+        return {
+          ...todo,
+          time: getData(),
+          isActive: !isActive,
+        };
       }
-    });
-    return arr;
-  };
+      return todo;
+    })
+  );
+
   const checkTodo = () => {
     setIsActive(!isActive);
-    setTodoList(newToDoList());
+    setTodoList(updateData());
     localStorage.setItem('ToDos', JSON.stringify(toDoList));
   };
   return (

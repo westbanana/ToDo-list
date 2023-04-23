@@ -20,13 +20,12 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
       setInputToDoName('');
     }
   };
-
-  // const CloseHint = () => setHintIsShowed(false);
   return (
     <div className={style.main}>
       <form action="#">
         <input
           type="text"
+          maxLength={300}
           placeholder="Write what to do"
           value={inputToDoName}
           onChange={e => setInputToDoName(e.target.value)}

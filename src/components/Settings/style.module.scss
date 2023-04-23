@@ -1,57 +1,78 @@
-.gear {
-  position: absolute;
-  z-index: 9999;
-  height: 30px;
-  width: 30px;
-  right: 20px;
-  top: 20px;
-  cursor: pointer;
-  transition: 0.5s;
-  &:hover {
-    transform: rotate(180deg);
+.mainBlock {
+  .gear {
+    position: absolute;
+    z-index: 9999;
+    height: 30px;
+    width: 30px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    path {
+      fill: rgba(100, 100, 100, 0.5);
+    }
+    &:hover {
+      transform: rotate(180deg);
+      path {
+        fill: rgb(213, 213, 213);
+      }
+    }
+  }
+  .openedSettings {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 9999;
+    padding: 20px 30px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(128, 128, 128, 0.51);
+    border-radius: 15px 0 0 15px;
+    animation: show 0.5s linear forwards;
+    h1 {
+      color: rgb(213, 213, 213);
+    }
+    .xmarkBlock {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      animation: test 0.5s linear forwards;
+      animation-delay: 0.3s;
+      opacity: 0;
+      .xmark {
+        cursor: pointer;
+        path {
+          fill: rgb(100, 100, 100, 1);
+        }
+        &:hover {
+          path {
+            transition: 0.3s;
+            fill: rgba(225, 0, 0, 0.7);
+          }
+        }
+      }
+    }
   }
 }
-
-.openedSettings {
-  color: white;
-  position: absolute;
-  z-index: 99999;
-  top: 0;
-  right: 0;
-  height: 100%;
-  background: black;
-  transition: 1s;
-  animation: showSettings 1s linear forwards;
-}
-
-.closedSetting {
-  color: white;
-  position: absolute;
-  z-index: 99999;
-  top: 0;
-  right: 0;
-  height: 100%;
-  background: red;
-}
-
-@keyframes showSettings {
-  0% {
+@keyframes show {
+  from {
     width: 0;
   }
-  60% {
-    width: 100%;
-  }
-  70% {
-    width: 93%;
-  }
-  80% {
-    width: 100%;
-  }
-  90% {
-    width: 97%;
-  }
-  100% {
-    width: 100%;
+  to {
+    width: 30%;
   }
 }
 
+@keyframes test {
+  0% {
+    opacity: 0;
+    justify-content: flex-start;
+  }
+  50% {
+    justify-content: flex-end;
+  }
+  100% {
+    opacity: 1;
+    justify-content: flex-end;
+  }
+}

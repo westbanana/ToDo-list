@@ -19,22 +19,6 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
     }, 300);
   };
 
-  // const changeTodoName = (element) => {
-  //   const text = element.target.innerHTML;
-  //   console.log(text);
-  //   setToDoList(prev => (
-  //     prev.map((todo) => {
-  //       if (e.id === todo.id) {
-  //         return {
-  //           ...todo,
-  //           name: text,
-  //         };
-  //       }
-  //       return todo;
-  //     })
-  //   ));
-  // };
-
   return (
     <div
       ref={refToDo}

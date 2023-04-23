@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import style from './style.module.scss';
 
-import Hint from '../Hint';
+// import Hint from '../Hint';
 
 const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
   const data = new Date();
   const monthShortNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
   ];
-  const [hintIsShowed, setHintIsShowed] = useState(false);
+  // const [hintIsShowed, setHintIsShowed] = useState(false);
   const createToDo = () => {
     if (inputToDoName.length) {
       const todo = {
@@ -18,18 +18,15 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
           ? data.getMinutes()
           : `0${data.getMinutes()}`}`,
         id: (new Date().getTime()),
-        description: '',
         isActive: false,
       };
       toDoList.push(todo);
       localStorage.setItem('ToDos', JSON.stringify(toDoList));
       setInputToDoName('');
-    } else {
-      setHintIsShowed(true);
     }
   };
 
-  const CloseHint = () => setHintIsShowed(false);
+  // const CloseHint = () => setHintIsShowed(false);
   return (
     <div className={style.main}>
       <form action="#">
@@ -47,12 +44,12 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
         </button>
         <span>{`TODOs: ${toDoList.length}`}</span>
       </form>
-      <Hint
+      {/* <Hint
         tittle="Заполните поле ввода"
         description="Чтобы создать TODO введите минимум 1 символ"
         isShowed={hintIsShowed}
         closeHint={CloseHint}
-      />
+      /> */ }
     </div>
   );
 };

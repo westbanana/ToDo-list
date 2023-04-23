@@ -5,6 +5,7 @@ import style from './style.module.scss';
 import { ReactComponent as Xmark } from '../../assets/xmark.svg';
 import { ReactComponent as Info } from '../../assets/info.svg';
 import CheckBox from '../CheckBox';
+import Hint from '../Hint';
 
 const ToDo = ({ e, toDoList, setToDoList }) => {
   const [isActive, setIsActive] = useState(false);
@@ -35,9 +36,13 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
       <div className={`${style.toDoTime} ${e.time ? style.throughTime : ''}`}>
         <span>{e.time}</span>
       </div>
-      <Info
-        className={style.info}
-      />
+      <div className={style.info}>
+        <Hint data={e}>
+          <Info
+            className={style.info}
+          />
+        </Hint>
+      </div>
       <Xmark
         className={style.xMark}
         role="presentation"

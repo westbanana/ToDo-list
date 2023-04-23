@@ -1,31 +1,58 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 
 import styles from './styles.module.scss';
 
-import { ReactComponent as XMark } from '../../assets/xmark.svg';
-
 const Hint = ({
-  tittle,
-  description,
-  isShowed,
-  closeHint,
+  children,
+  data,
 }) => {
-  const onClickHandler = () => {
-    closeHint();
+  const [isVisible, setIsVisible] = useState(false);
+  const childRef = useRef();
+  const refTooltip = useRef();
+  const setHintPosition = () => ({
+    left: 30,
+    top: -100,
+  });
+  const showHint = () => {
+    setIsVisible(true);
   };
+  const hideHint = () => {
+    setIsVisible(false);
+  };
+
   return (
-    isShowed && (
-      <div
-        className={styles.mainBlock}
-      >
-        <XMark
-          className={styles.XMark}
-          onClick={onClickHandler}
-        />
-        <h3>{tittle}</h3>
-        <span>{description}</span>
-      </div>
-    )
+    <div
+      className={styles.mainBlock}
+      onMouseEnter={showHint}
+      onMouseLeave={hideHint}
+    >
+      {React.cloneElement(children, { ref: childRef })}
+      {isVisible && (
+        <div
+          ref={refTooltip}
+          className={styles.tooltipBlock}
+          style={setHintPosition()}
+        >
+          <table>
+            <thead />
+            <tbody>
+              <tr>
+                <td>Name:</td>
+                <td>{data.name}</td>
+              </tr>
+              <tr>
+                <td>Id:</td>
+                <td>{data.id}</td>
+              </tr>
+              <tr>
+                <td>Time:</td>
+                <td>{data.time}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
   );
 };
 

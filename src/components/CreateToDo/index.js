@@ -7,7 +7,8 @@ import getData from '../Helpers/GetData';
 // import Hint from '../Hint';
 
 const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
-  const createToDo = () => {
+  const createToDo = (e) => {
+    e.stopPropagation();
     if (inputToDoName.length) {
       const todo = {
         name: inputToDoName,

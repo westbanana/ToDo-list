@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import style from './style.module.scss';
 
@@ -7,6 +7,8 @@ import getData from '../Helpers/GetData';
 // import Hint from '../Hint';
 
 const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
+  const [emptyClickCount, setEmptyClickCount] = useState(0);
+  const stopRef = useRef();
   const createToDo = (e) => {
     e.stopPropagation();
     if (inputToDoName.length) {
@@ -19,10 +21,28 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
       toDoList.push(todo);
       localStorage.setItem('ToDos', JSON.stringify(toDoList));
       setInputToDoName('');
+    } else {
+      setEmptyClickCount(prev => prev + 1);
     }
   };
+  useEffect(() => {
+    if (emptyClickCount % 10 === 0 && emptyClickCount >= 10) {
+      stopRef.current.classList.remove(style.stopSpanHide);
+      stopRef.current.classList.add(style.stopSpanShow);
+      setTimeout(() => {
+        stopRef.current.classList.remove(style.stopSpanShow);
+        stopRef.current.classList.add(style.stopSpanHide);
+      }, 3000);
+    }
+  }, [emptyClickCount]);
   return (
     <div className={style.main}>
+      <span
+        ref={stopRef}
+        className={style.stopSpanHide}
+      >
+        АСТАНАВИТЕСЬ
+      </span>
       <form action="#">
         <input
           type="text"

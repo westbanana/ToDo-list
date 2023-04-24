@@ -24,9 +24,14 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
   const changeInputName = (input) => {
     setInputTodoName(input.target.value);
   };
+  console.log(toDoList);
   const changeTodoName = () => {
     setToDoList(prev => prev.map((todo) => {
-      if (todo.id === e.id && inputTodoName.length) {
+      if (
+        todo.id === e.id
+        && inputTodoName.length
+        && !e.isActive
+      ) {
         return ({ ...todo, name: inputTodoName });
       }
       return todo;
@@ -34,6 +39,15 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
     setInputTodoName('');
     setEditClicked(false);
   };
+
+  const openEditTodo = () => {
+    if (!e.isActive) setEditClicked(true);
+  };
+
+  const closeEditTodo = () => {
+    setEditClicked(false);
+  };
+
   return (
     <div
       ref={refToDo}
@@ -97,7 +111,7 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
             />
             <Xmark
               className={style.xMark}
-              onClick={() => setEditClicked(false)}
+              onClick={closeEditTodo}
             />
           </div>
         </div>
@@ -117,7 +131,7 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
           </Hint>
         </div>
         <Edit
-          onClick={() => setEditClicked(true)}
+          onClick={openEditTodo}
           className={style.edit}
         />
         <Xmark

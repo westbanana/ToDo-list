@@ -1,5 +1,29 @@
 .main{
   width: 100%;
+  .stopSpanShow {
+    display: flex;
+    font-size: 20px;
+    position: absolute;
+    color: white;
+    opacity: 0;
+    animation: showStopSpan 3s linear infinite;
+  }
+  .stopSpanHide {
+    display: none;
+    color: white;
+  }
+  @keyframes showStopSpan {
+    0% {
+      left: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      left: calc(100%);
+    }
+  }
   form{
     display: flex;
     flex-direction: column;

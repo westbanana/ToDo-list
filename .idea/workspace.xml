@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a26921e-fea6-4499-8048-0dde0548333b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/CreateToDo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateToDo/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.module.scss" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Kov68Hb3vcEMOR8anAUNRxJ16q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programing/Projects/todo-list&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Programing\Projects\todo-list\src" />
+      <recent name="C:\Programing\Projects\todo-list\src\firebase" />
+      <recent name="C:\Programing\Projects\todo-list\src\components\Helpers" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a26921e-fea6-4499-8048-0dde0548333b" name="Changes" comment="" />
+      <created>1674653577851</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674653577851</updated>
+      <workItem from="1674653580184" duration="7141000" />
+      <workItem from="1674678369577" duration="610000" />
+      <workItem from="1674819519056" duration="13307000" />
+      <workItem from="1674913102183" duration="1607000" />
+      <workItem from="1675006393444" duration="7756000" />
+      <workItem from="1675026919919" duration="5201000" />
+      <workItem from="1675032555422" duration="6337000" />
+      <workItem from="1675090011203" duration="89000" />
+      <workItem from="1675159357321" duration="4090000" />
+      <workItem from="1675168067788" duration="1036000" />
+      <workItem from="1675253988479" duration="289000" />
+      <workItem from="1675265660679" duration="351000" />
+      <workItem from="1675278013938" duration="1190000" />
+      <workItem from="1675357181854" duration="54000" />
+      <workItem from="1682007274001" duration="7161000" />
+      <workItem from="1682014913883" duration="880000" />
+      <workItem from="1682156880227" duration="7277000" />
+      <workItem from="1682242973217" duration="9486000" />
+      <workItem from="1682269977208" duration="8432000" />
+      <workItem from="1682359185044" duration="8821000" />
+      <workItem from="1682371507915" duration="679000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

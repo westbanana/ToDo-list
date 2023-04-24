@@ -1,3 +1,18 @@
+.test {
+  opacity: 0;
+  animation: showTest 0.1s linear forwards;
+}
+
+@keyframes showTest {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 textarea {
   resize: none;
   background: transparent;
@@ -79,6 +94,7 @@ textarea {
   }
 
   .xMark,
+  .accept,
   .edit,
   .info,
   input {
@@ -133,6 +149,19 @@ textarea {
     }
   }
 }
+  .accept {
+    cursor: pointer;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(8, 215, 32, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
 
 .toDo {
   color: white;
@@ -400,6 +429,21 @@ textarea {
       transition: 0.3s;
     }
     .xMark{
+      cursor: pointer;
+      right: -30px;
+      top: 5px;
+      &:hover{
+        path{
+          transition: 0.3s;
+          fill: rgba(225, 0, 0, 0.5);
+        }
+      }
+      path{
+        transition: 0.3s;
+        fill: rgba(100, 100, 100, 0.5);
+      }
+    }
+    .accept{
       cursor: pointer;
       right: -30px;
       top: 5px;

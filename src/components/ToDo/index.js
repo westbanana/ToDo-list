@@ -24,7 +24,6 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
   const changeInputName = (input) => {
     setInputTodoName(input.target.value);
   };
-  console.log(toDoList);
   const changeTodoName = () => {
     setToDoList(prev => prev.map((todo) => {
       if (
@@ -39,15 +38,14 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
     setInputTodoName('');
     setEditClicked(false);
   };
-
   const openEditTodo = () => {
     if (!e.isActive) setEditClicked(true);
   };
 
   const closeEditTodo = () => {
+    setInputTodoName(e.name);
     setEditClicked(false);
   };
-
   return (
     <div
       ref={refToDo}

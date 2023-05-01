@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import style from './style.module.scss';
 
 const Background = () => {
-  const blick = Array(10).fill(null);
+  const blick = Array(1).fill(null);
+  const [x, changeX] = useState(0);
+  const [y, changeY] = useState(0);
 
+  useEffect(() => {
+    setInterval(() => {
+      changeX(Math.floor(Math.random() * window.innerWidth) + 1);
+      changeY(Math.floor(Math.random() * window.innerHeight) + 1);
+    }, 1111);
+  }, []);
   return (
     <div className={style.main}>
       {blick.map((e, index) => (
@@ -13,8 +21,8 @@ const Background = () => {
           key={index + e}
           className={style.blick}
           style={{
-            left: Math.floor(Math.random() * window.innerWidth) + 1,
-            top: Math.floor(Math.random() * window.innerHeight) + 1,
+            left: x,
+            top: y,
           }}
         />
       ))}

@@ -1,4 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import style from './style.module.scss';
 
@@ -18,7 +23,7 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
         id: (new Date().getTime()),
         isActive: false,
       };
-      toDoList.push(todo);
+      toDoList.unshift(todo);
       localStorage.setItem('ToDos', JSON.stringify(toDoList));
       setInputToDoName('');
     } else {
@@ -35,6 +40,9 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
       }, 3000);
     }
   }, [emptyClickCount]);
+  const onChangeHandler = useCallback((e) => {
+    setInputToDoName(e.target.value);
+  }, [inputToDoName]);
   return (
     <div className={style.main}>
       <span
@@ -49,7 +57,7 @@ const CreateToDo = ({ inputToDoName, setInputToDoName, toDoList }) => {
           maxLength={300}
           placeholder="Write what to do"
           value={inputToDoName}
-          onChange={e => setInputToDoName(e.target.value)}
+          onChange={e => onChangeHandler(e)}
         />
         <button
           onClick={createToDo}

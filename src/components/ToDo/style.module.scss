@@ -1,0 +1,462 @@
+.test {
+  opacity: 0;
+  animation: showTest 0.1s linear forwards;
+}
+
+@keyframes showTest {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+textarea {
+  resize: none;
+  background: transparent;
+  ::placeholder {
+    color: black;
+  }
+}
+
+.done,
+.toDo
+{
+  animation: born 0.3s linear forwards;
+}
+
+.removeTodo {
+  animation: delete 0.3s linear forwards;
+}
+
+.done {
+  color: white;
+  position: relative;
+  min-width: 50%;
+  max-width: 50%;
+  min-height: 50px;
+  padding: 15px;
+  margin: 0 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  transition: 0.3s;
+  background: rgba(162, 252, 146, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(187, 250, 197, 0.4);
+  input {
+  }
+  .toDoTittle {
+    text-align: left;
+    span {
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+    }
+  }
+
+  .toDoDone {
+    text-align: left;
+    span{
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+      text-decoration: line-through;
+    }
+  }
+
+  .toDoTime {
+    text-align: end;
+    font-weight: 100;
+  }
+
+  .throughTime {
+    text-decoration: line-through;
+  }
+
+  .todoSettingsBlock {
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 19px;
+    height: 90%;
+  }
+
+  .xMark,
+  .accept,
+  .edit,
+  .info,
+  input {
+    transition: 0.3s;
+  }
+
+  .info {
+    height: 15px;
+    width: 15px;
+    cursor: help;
+    order: 3;
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+    &:hover {
+      path,
+      rect,
+      circle {
+        transition: 0.3s;
+        fill: rgb(213, 213, 213);
+      }
+    }
+  }
+  .edit {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    order: 2;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(8, 215, 32, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+  .xMark {
+    cursor: pointer;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(225, 0, 0, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+}
+  .accept {
+    cursor: pointer;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(8, 215, 32, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+
+.toDo {
+  color: white;
+  position: relative;
+  min-width: 50%;
+  max-width: 50%;
+  min-height: 50px;
+  padding: 15px;
+  margin: 0 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: rgba(211, 211, 211, 0.53);
+  }
+
+  .todoSettingsBlock {
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: -30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 19px;
+    height: 90%;
+  }
+
+  .toDoTittle {
+    text-align: left;
+    span {
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+    }
+  }
+  .toDoDone {
+    text-align: left;
+    span {
+      font-size: 20px;
+      font-weight: 400;
+      word-break: break-all;
+      text-decoration: line-through;
+    }
+  }
+
+  .toDoTime {
+    text-align: end;
+    font-weight: 100;
+  }
+  .xMark,
+  .edit,
+  .info,
+  input {
+    transition: 0.3s;
+  }
+
+  .info {
+    height: 15px;
+    width: 15px;
+    cursor: help;
+    order: 3;
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+    &:hover {
+      path,
+      rect,
+      circle {
+        transition: 0.3s;
+        fill: rgb(213, 213, 213);
+      }
+    }
+  }
+  .edit {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    order: 2;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(8, 215, 32, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+  .xMark {
+    cursor: pointer;
+    &:hover {
+      path {
+        transition: 0.3s;
+        fill: rgba(225, 0, 0, 0.5);
+      }
+    }
+    path {
+      transition: 0.3s;
+      fill: rgba(100, 100, 100, 0.5);
+    }
+  }
+}
+
+@keyframes born {
+  from{
+    transform: translateX(-100%);
+    scale: 0.5;
+  }
+  to{
+    transform: translateX(0);
+    scale: 1;
+  }
+}
+
+@keyframes delete {
+  from{
+    scale: 1;
+  }
+  to{
+    scale: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  textarea {
+    resize: none;
+    background: transparent;
+    ::placeholder {
+      color: black;
+    }
+  }
+  .done,
+  .toDo{
+    animation: born 0.3s linear forwards;
+  }
+
+  .removeTodo{
+    animation: delete 0.3s linear forwards;
+  }
+
+  .done{
+    color: white;
+    position: relative;
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 50px;
+    padding: 15px;
+    margin: 0 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    transition: 0.3s;
+    background: rgba(162, 252, 146, 0.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(187, 250, 197, 0.4);
+    .toDoTittle{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+      }
+    }
+    .toDoDone{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+        text-decoration: line-through;
+      }
+    }
+    .toDoTime{
+      text-align: end;
+      font-weight: 100;
+    }
+    .xMark,
+    .edit,
+    input{
+      position: absolute;
+      transition: 0.3s;
+    }
+    .xMark {
+      animation: showBlock 0.3s linear forwards;
+      cursor: pointer;
+      right: -30px;
+      top: 5px;
+      &:hover{
+        path{
+          transition: 0.3s;
+          fill: rgba(225, 0, 0, 0.5);
+        }
+      }
+      path{
+        transition: 0.3s;
+        fill: rgba(100, 100, 100, 0.5);
+      }
+    }
+  }
+
+  .toDo{
+    color: white;
+    position: relative;
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 50px;
+    padding: 15px;
+    margin: 0 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    .toDoTittle{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+      }
+    }
+    .toDoDone{
+      text-align: left;
+      span{
+        font-size: 20px;
+        font-weight: 400;
+        word-break: break-all;
+        text-decoration: line-through;
+      }
+    }
+    .toDoTime{
+      text-align: end;
+      font-weight: 100;
+    }
+    .xMark,
+    .edit,
+    input{
+      position: absolute;
+      transition: 0.3s;
+    }
+    .xMark{
+      cursor: pointer;
+      right: -30px;
+      top: 5px;
+      &:hover{
+        path{
+          transition: 0.3s;
+          fill: rgba(225, 0, 0, 0.5);
+        }
+      }
+      path{
+        transition: 0.3s;
+        fill: rgba(100, 100, 100, 0.5);
+      }
+    }
+    .accept{
+      cursor: pointer;
+      right: -30px;
+      top: 5px;
+      &:hover{
+        path{
+          transition: 0.3s;
+          fill: rgba(225, 0, 0, 0.5);
+        }
+      }
+      path{
+        transition: 0.3s;
+        fill: rgba(100, 100, 100, 0.5);
+      }
+    }
+  }
+}

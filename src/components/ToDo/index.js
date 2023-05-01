@@ -12,7 +12,7 @@ import Hint from '../Hint';
 const ToDo = ({ e, toDoList, setToDoList }) => {
   const [isActive, setIsActive] = useState(false);
   const [editClicked, setEditClicked] = useState(false);
-  const [inputTodoName, setInputTodoName] = useState('');
+  const [inputTodoName, setInputTodoName] = useState(e.name);
   const refToDo = useRef(null);
   const deleteToDo = () => {
     const arr = toDoList.filter(todo => todo.id !== e.id);
@@ -95,7 +95,7 @@ const ToDo = ({ e, toDoList, setToDoList }) => {
             }}
             onChange={changeInputName}
             value={inputTodoName}
-            placeholder={e.name}
+            // placeholder={e.name}
           />
           <div
             style={{
